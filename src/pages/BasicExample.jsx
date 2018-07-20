@@ -1,5 +1,6 @@
 import React from "react";
 import { HashRouter as Router, Route, Link } from "react-router-dom";
+import Login from "./login"
 import Home from "./home"
 import About from "./about"
 import Topics from "./Topics"
@@ -13,8 +14,9 @@ import Topics from "./Topics"
 
 const BasicExample = () => (
   <Router>
-    <div>
-      <Route exact path="/" component={Home} />
+    <div className="root-scale">
+      <Route exact path="/" component={Login} />
+      <Route exact path="/home" component={Home} />
       <Route path="/about" component={About} />
       <Route path="/topics" component={Topics} />
     </div>

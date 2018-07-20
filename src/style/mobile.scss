@@ -1,0 +1,533 @@
+.root-scale, #root, .Home {
+    height: 100%;
+    width: 100%;
+}
+/* ---标题栏--- */
+.header {
+    width: 100%;
+    height: 8vh;
+    padding: 1vh 0;
+    background-color: rgb(25, 158, 216);
+    position: fixed;
+    top: 0;
+    color: #fff;
+    text-align: center;
+    line-height: 6vh;
+    font-size: 0.2rem;
+    z-index: 999;
+  }
+  
+  .header .iconfont {
+    position: absolute;
+    right: 0.1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.4rem;
+  }
+  .header-logo {
+    position: absolute;
+    left: 0.1rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .header-title {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    font-size: 0.25rem;
+    font-weight: 600;
+  }
+  
+  /* ---主要内容--- */
+  .content {
+    width: 100%;
+    padding-top: 7vh;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #fff;
+  }
+  
+  .content .block {
+    width: 33%;
+    height: 20vh;
+    /* box-shadow: 1px 1px 1px #ece8e8, -1px -1px 1px #ece8e8; */
+    /* background-color: #bbbbbb36; */
+    /* margin: 1%; */
+    padding: 0.2rem 2% 0.1rem 2%;
+    cursor: pointer;
+  }
+  
+  .content .report {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    /* border: 1px solid #bbbbbb8c; */
+    position: relative;
+    box-shadow: 1px 1px 1px #ece8e8, -1px -1px 1px #ece8e8;
+  }
+  
+  .content .report::after {
+    content: "";
+    position: absolute;
+    width: 90%;
+    height: 0.05rem;
+    background-color: rgba(255, 255, 255, 1);
+    top: -0.1rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .content .report .report-img {
+    width: 100%;
+    height: 70%;
+    padding: 3px 1%;
+    background-repeat: no-repeat;
+    background-image: url("./img/logo.png");
+    background-size: contain;
+    background-position: center center;
+  }
+  .qlik-sense {
+    background-image: url("./img/Qlik-sense.png");
+  }
+  .FineR {
+    background-image: url("./img/tb.png");
+  }
+  .tableau {
+    background-image: url("./img/FineR.png");
+  }
+  
+  .content .report .report-words {
+    border-top: 1px solid #bbbbbb8c;
+    padding: 0.05rem 0.1rem;
+    width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  
+  /* ---详细内容页--- */
+  .detail-content {
+    width: 100%;
+    height: 100%;
+    padding-top: 8vh;
+    margin: 0 auto;
+    position: absolute;
+    top: 0;
+    /* display: none; */
+  }
+  
+  .detail-content .detail-title {
+    width: 100%;
+    padding: 1.5vh;
+    color: #fff;
+    background-color: rgb(149, 210, 237);
+    font-size: 0.18rem;
+    padding-left: 2%;
+    z-index: 999;
+  }
+  .report-title {
+    font-size: 0.2rem;
+    width: 50vw;
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  
+  .detail-content .detail {
+    width: 100%;
+    height: 86vh;
+    position: relative;
+    overflow-x: hidden;
+  }
+  .detail-content .comment {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    background: #fff;
+    transition: all 0.5s ease;
+  }
+  
+  .detail-content .detail-report,
+  .detail-content .iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+  .detail-content .detail-report {
+    -webkit-overflow-scrolling: touch;
+    overflow: scroll;
+    position: fixed;
+  }
+  
+  
+  /* ---下拉列表--- */
+  .slide-down {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 1.5s ease;
+  }
+  
+  .slide-down .opration-line {
+    width: 100%;
+    /* margin-top: 10vh; */
+    text-align: right;
+    font-size: 0.3rem;
+    color: #fff;
+  }
+  
+  .slide-down .opration-line p {
+    flex: 1;
+    text-align: center;
+    font-size: 0.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .slide-down .tab {
+    width: 100%;
+    max-height: 400px;
+  }
+  
+  .slide-down .tab .tab-title {
+    background-color: rgb(25, 158, 216);
+    color: #fff;
+    font-size: 0.3rem;
+    padding: 0.8em;
+    position: relative;
+  }
+  
+  .slide-down .tab .tab-title::before {
+    content: "\e676";
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 0.6rem;
+    /* transform: translateY(-50%); */
+    font-family: "iconfont";
+  }
+  
+  .slide-down .tab .list {
+    width: 100%;
+    max-height: 400px;
+    overflow-y: auto;
+    list-style: none;
+    background-color: #fff;
+  }
+  
+  .slide-down .tab .list li {
+    width: 98%;
+    font-size: 0.18rem;
+    padding: 1em 1em;
+    margin: 0 auto;
+    border-bottom: 1px solid rgb(211, 210, 210);
+  }
+  
+  .slide-down .tab .list .active {
+    background-color: rgb(149, 210, 237);
+    color: #fff;
+    position: relative;
+  }
+  
+  .slide-down .tab .list .active::before {
+    content: "\e610";
+    font-family: "iconfont";
+    color: #339933;
+    position: absolute;
+    right: 3%;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.18rem;
+  }
+  
+  /* For treemenu */
+  
+  .treemenu li {
+    list-style: none;
+  }
+  
+  .treemenu .toggler {
+    cursor: pointer;
+    font-size: 0.3rem;
+  }
+  
+  .treemenu .toggler:before {
+    display: inline-block;
+    margin-right: 5pt;
+  }
+  
+  li.tree-empty > .toggler {
+    color: #2ebce8;
+    font-size: 0.3rem;
+  }
+  li.tree-empty > .toggler:before {
+    content: "\e701";
+    font-family: "iconfont";
+  }
+  li.tree-closed > .toggler:before {
+    content: "\e69e";
+    font-family: "iconfont";
+  }
+  li.tree-opened > .toggler:before {
+    content: "\e701";
+    font-family: "iconfont";
+  }
+  .iframe {
+    display: inline-block;
+    width: 101%; height: 101%
+  }
+  
+  /* 下拉菜单开始 */
+  
+  .tree {
+    color: #46cfb0;
+    width: 100%;
+    margin: 0 auto;
+    background-color: #fff;
+  }
+  
+  .tree li,
+  .tree li > a,
+  .tree li > span {
+    padding: 0.18rem;
+  }
+  
+  .tree li a {
+    padding: 0.2rem 0.5rem;
+    color: #46cfb0;
+    text-decoration: none;
+    line-height: 20pt;
+    position: relative;
+  }
+  .tree li a:before {
+    content: "\e7aa";
+    font-family: "iconfont";
+    width: 0.2rem;
+    display: inline-block;
+    color: #f5d370;
+    position: absolute;
+    left: 0.1rem;
+    top: 50%;
+    font-size: 0.3rem;
+    transform: translateY(-50%);
+  }
+  
+  .tree li a:hover {
+    background-color: #34bc9d;
+    color: #fff;
+  }
+  a.active {
+    /* background: rgb(149, 210, 237); */
+    background-color: #34bc9d;
+    color: #fff !important;
+  }
+  
+  /* .active {
+    background-color: #34495e;
+    color: white;
+  } */
+  
+  .active a {
+    color: #fff;
+  }
+  
+  .tree li a.active:hover {
+    background-color: #34bc9d;
+  }
+  
+  .m_logo {
+    height: 8vh;
+    padding: 0.1rem;
+    vertical-align: middle;
+  }
+  
+  .tree li > span {
+    padding: 5pt;
+    line-height: 20pt;
+  }
+  
+  /* 下拉菜单结束 */
+  /* 评论 */
+  .comment-ico {
+    font-size: 0.4rem;
+    padding: 0 0.15rem;
+  }
+  .likeTitle-report .el-button--text:focus,
+  .likeTitle-report .el-button--text:hover {
+    color: none;
+  }
+  
+  .comment-btn {
+    float: right;
+    margin-right: -0.1rem;
+  }
+  
+  .commentContent {
+    overflow: auto;
+    margin-bottom: 50px;
+  }
+  .content-list {
+    /* flex: 1 1 0%; */
+    padding-bottom: 50px;
+    /* display: flex; */
+    flex-direction: column;
+    overflow: auto;
+  }
+  .likeCommentClose {
+    padding: 10px;
+    background: #fd8c3a;
+    color: #fff;
+    width: 100%;
+    text-align: right;
+  }
+  .closed {
+    font-weight: 800;
+    cursor: pointer;
+    padding: 0.2rem 0 0.2rem 0.5rem;
+  }
+  .reportLikes {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+  }
+  
+  .like-wrap {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+  }
+  .likeTitle-report {
+    font-size: 20px;
+    padding: 10px 5px;
+  }
+  .likeContent {
+    padding: 5px;
+  }
+  .likeContent-comment {
+    float: left;
+    padding: 10px 0;
+    margin-left: 20px;
+  }
+  .likeContent-likes {
+    float: right;
+    padding: 10px 0;
+    margin-right: 20px;
+  }
+  .likeContent-input {
+    width: 100%;
+    overflow: hidden;
+    padding: 5px;
+    padding-top: 8px;
+    border-top: 1px solid #ccc;
+    position: fixed;
+    bottom: 0;
+    background: #fff;
+  }
+  .commentLists {
+    background: #ffffff;
+    overflow: hidden;
+    border-top: 1px solid #f1eeee;
+  }
+  .commentLists-wrap {
+    padding: 0.1rem;
+  }
+  .commentLists-img {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background: rebeccapurple;
+    text-align: center;
+    background: url("./img/Qlik_default_feathers.png") no-repeat;
+    background-size: cover;
+  }
+  .commentLists-img,
+  .commentLists-name,
+  .commentLists-time {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0 0.1rem;
+  }
+  .commentLists-name {
+    color: blue;
+    font-weight: 600;
+  }
+  
+  .commentLists-time {
+    font-size: 0.12rem;
+  }
+  .clearfix::after {
+    content: ".";
+    clear: both;
+    display: block;
+    overflow: hidden;
+    font-size: 0;
+    height: 0;
+  }
+  .commentLists-cont {
+    padding: 0.2rem;
+    padding-left: 0.6rem;
+  }
+  .comment-num {
+    color: red;
+    font-weight: 700;
+    font-size: 26px;
+  }
+  
+  .submit {
+    padding: 10px;
+    width: 20%;
+    background: #199ed8;
+    color: #fff;
+  }
+  
+  #set-likes.active {
+    color: #ef6767;
+    /* background: url(../img/like.png) no-repeat; */
+  }
+  .comments-tolpit {
+    font-size: 12px;
+    color: red;
+    display: none;
+  }
+  #set-favorite.active {
+    color: #f5e409;
+  }
+  /* 评论结束 */
+  
+  /* empty report */
+  .alertImg {
+    width: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .floaderEmpty {
+    width: 100%;
+    position: absolute;
+    bottom: 20%;
+    left: 0;
+    font-size: 0.5rem;
+    color: rgb(205, 205, 205);
+    text-align: center;
+    /* transform: translateY(-50%); */
+  }
+  

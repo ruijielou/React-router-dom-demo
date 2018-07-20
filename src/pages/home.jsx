@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { HashRouter as Router, Route, Link } from "react-router-dom";
+import Header from "./header";
+import Detail from './Detail'
 
 class Home extends Component {
   constructor(props) {
@@ -16,10 +18,8 @@ class Home extends Component {
   render() {
     return (
       <div className="Home">
-        <header className="Home-header">
-          {/* <h1 className="App-title" onClick={this.hadleClick.bind(this)}>Welcome to {this.state.path}</h1> */}
-          <Link to={'/about'}>to about</Link>
-        </header>
+        <Header />
+        <Detail />
       </div>
     );
   }

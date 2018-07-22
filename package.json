@@ -10,6 +10,24 @@
     "redux": "^4.0.0",
     "three": "^0.94.0"
   },
+  "proxy": {
+    "/v2": {
+      "target": "https://api.douban.com",
+      "changeOrigin": true,
+      "pathRewrite": {
+        "^/v2": "/v2"
+      }
+    },
+    "/j": {
+      "target": "http://earth.ebistrategy.com",
+      "changeOrigin": true,
+      "secure": false,
+      "pathRewrite": {
+        "^/j": "/j"
+      }
+    }
+  },
+  "changeOrigin":true,
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

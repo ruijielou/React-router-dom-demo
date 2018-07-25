@@ -3,8 +3,8 @@ import LoginStore from './LoginStore';
 
 console.log(LoginStore)
 
-const store = {
+const stores = {
     LoginStore
 };
 
-export default store;
+export default stores;

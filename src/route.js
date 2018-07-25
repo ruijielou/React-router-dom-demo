@@ -14,16 +14,16 @@ import { observer } from "mobx-react"
  * 
 */
 
-const Main = withRouter(props => <Router {...props} />);
+// const Main = withRouter(props => <Router {...props} />);
 
 export default () => (
-  <Main>
+  <Router>
       <div className="root-scale">
       <Route exact path="/" component={Login} />
       <Route exact path="/home" component={Home} />
       <Route path="/about" component={About} />
       <Route path="/topics" component={Topics} />
       </div>
-  </Main>
+  </Router>
 );
 
